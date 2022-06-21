@@ -1,0 +1,19 @@
+!! To navigate through the server directory, 
+write the command in the terminal --> npm init -y
+this is going to initialisse an empty package json.
+Now we will be able to install all the necessary dependencies.
+
+!! npm install body-parser cors express mongoose nodemon
+ *body-parser --> this is going to enable us to send post requests.
+ *express --> framework for creating the routing of our application.
+ *mongoose --> to create models for our posts.
+ *nodemon --> so that we dont have to manually reset the server everytime we make a change.
+
+!! Now after this import the dependencies in index.js
+After successfully writing the import code in the index.js file,
+we need to do one small thing in the package.json file
+add one line below the main index.js --> "type": "module",
+
+!! After this, delete the test script and add start script.
+"start": "nodemon index.js"
+

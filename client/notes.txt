@@ -1,0 +1,24 @@
+!! For starting the react application, give the command 
+npx create-react-app ./
+
+!! After successfully installing react application, we can go ahead and type
+npm install axios moment react-file-base64 redux redux-thunk
+ * axios--> we are using axios for making api request.
+ * moment--> is a library for working with time and date.
+ * react-file-base64--> use to convert our images.
+ * redux-thunk --> is used for asynchronous actions using redux
+
+!! In the index.js file of client server, we will connect the react application
+to index.html file. So, import react from react.
+After importing the necessary things in the index.js file along with the app component. 
+We will create an App.js file where we will add simple functional component.
+Import -> react and create a component const App = () => {}
+export default App;
+
+!! To run the application we need to type --- npm start.
+For closing we need to give ctrl+C.
+We did this bcoz we need to setup our backend.
+* connect to the databse
+* create a mongodb cluster
+* set up the models
+* create some documents
