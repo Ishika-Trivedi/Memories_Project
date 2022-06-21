@@ -60,3 +60,36 @@ export default router;
 import postRoutes from './routes/posts.js';
 Now we can use express middleware to connect this to our application.
 app.use('/posts', postRoutes); //it is said that every route inside of the post routes is going to start with post.
+
+!! Backend Folder Structure..
+We will make a folder called controllers, inside that folder create a file called posts.js
+Inside this posts.js file, we are going to create all the handlers for our routes.
+Now we will call the function in the routes.
+import {getPosts} from '../controller/posts.js'
+
+!! Creation of a new folder -- models
+Now create a file as postMessage.js --> we will utilise the possibilities of mongoose.
+Now, first we have to create a mongoose schema -
+const postSchema = mongoose.Schema({
+});
+Schema--with mongodb, we can create documents that look absolutely different. 
+Mongoose allows us to give uniformity to our documents.
+
+!! After the creation of schema, we now want to convert into model.
+const postMessage = mongoose.model('PostMessage',postSchema);
+After this we are exporting a mongoose model from the postMessage file and later on we will able to run commands such
+as find, create, delete and update.
+Now our model is done, so we can start adding to our route.
+
+!! We will first create a createPost in the controller and then import in the route.
+After this we will start implementing the real logic for getting and creating posts.
+For this-- import PostMessage from '../models/postMessage.js';
+After giving the logic for getPosts, now its time for giving logic for creating the posts.
+With post request, we have access to req.body --
+const post = req.body;
+Immediately after we have created this post, we have to create a form for making different posts.
+Now, we want to create a new post,
+const newPost = new PostMessage(post);
+
+
+
