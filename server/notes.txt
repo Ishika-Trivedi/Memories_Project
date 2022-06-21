@@ -17,3 +17,22 @@ add one line below the main index.js --> "type": "module",
 !! After this, delete the test script and add start script.
 "start": "nodemon index.js"
 
+!! For every express application, we need to initialise the app.
+const app = express();
+
+!! After the general setting of bodyParser, we need to connect our server application with a real database.
+For that we are going to use mongodb.(cloud/atlas version){that means they are going to host our databse on their cloud}
+After creating the cluster, we need to connect it with the application.
+For that copy the command from the mongodb atlas and copy paste in vs code.
+const CONNECTION_URL = "...";
+
+!! After connecting to the databse, we need to port now,
+const PORT = process.env.PORT || 5000;
+
+!! Finally, we will use our mongoose to connect to the database.
+mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => app.listen(PORT, () => console.log('Server is running on port: ${PORT}')))  //what we want to do if our app is successful.
+.catch((error) => console.log(error.message)); // if the connection is not successful.
+
+!! Final piece of setup is 
+mongoose.set('useFindAndModify', false);
