@@ -22,3 +22,8 @@ We did this bcoz we need to setup our backend.
 * create a mongodb cluster
 * set up the models
 * create some documents
+
+!! npm install @material-ui/core
+This is going to be ui kit we will be using.
+Material ui is quite popular when working with react because it allows you to create a
+nice looking application without lot of styling.
