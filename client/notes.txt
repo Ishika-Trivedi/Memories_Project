@@ -54,3 +54,34 @@ Now, we have to create a function that is going to simply call our axios.get(url
 !! Now we should focus on adding redux capabilities.
 ALl actions towards our backend are going to be done using redux.
 Adding redux makes our application scalable in the long term application.
+
+!! Now, in main index.js file we will initialise redux.
+import {Provider} from 'react-redux';
+ *Provider:- keeps the track of that store which is that global state and that allows us to 
+access that store from anywhere inside of the app.
+Now we are going to import {createStore, applyMiddleware, compose} from 'redux';
+Finally we need to import thunk from 'redux-thunk';
+
+!! To set redux, we first have to create store. This takes in two different things.
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+Now we need to import reducers.
+import reducers from './reducers';
+
+!! What is  a reducer?
+Well.a reducer is a function more specifically it is equal to a function that accepts the state
+and also it accepts the action.
+const reducer = (state, action) => {
+    // based on the action type
+    if(action.type = 'CREATE'){
+        // Some logic.
+    }
+    for more clarity we will prefer switch statement.
+}
+In switch statement we are going to have all our actions like we know we are going to fetch all our posts
+so case 'FETCH_ALL': case 'CREATE':
+and one for crating the post.
+Our post is going to be an array. That's y state [].
+We will use this reducers in the index.js file.
+
+!! With the provider we will wrap our component.
+Our application is now successfully using redux.
