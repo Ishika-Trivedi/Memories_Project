@@ -27,3 +27,30 @@ We did this bcoz we need to setup our backend.
 This is going to be ui kit we will be using.
 Material ui is quite popular when working with react because it allows you to create a
 nice looking application without lot of styling.
+
+!! Now, in app.js file we are going to import all the components which we are going to use.
+For images, we need to create a new folder in the src and save the image with .png and then import 
+the image from the folder.
+Below the appbar, we will give grow component which usually provides some simple animations.
+
+!! After this just create a post and form.js file and then export it.
+The exported file is then imported into the app.js file.
+
+!! Now its time for the styling.
+How we can properly add styles to a material ui application?
+Inside src folder create a style.js file. Then we have to import
+import {makeStyles} from '@material-ui/core/styles';
+
+!! After this import all the styles in the form and post file.
+The frontend is ready.
+
+!! Now, start implementing the calls to the api.
+In the client module, in src folder we will create a new folder called api.
+Inside api folder we are going to have an index.js file.
+const url = "http://localhost:5000/posts"; 
+This is the url pointing to our backend route and this simply returns all the posts which we have in our database.
+Now, we have to create a function that is going to simply call our axios.get(url).
+
+!! Now we should focus on adding redux capabilities.
+ALl actions towards our backend are going to be done using redux.
+Adding redux makes our application scalable in the long term application.
